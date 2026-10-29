@@ -1,0 +1,19 @@
+{
+  "name": "tagpt",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TAgpt - persönliche KI-Webanwendung",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "multer": "^1.4.5-lts.2",
+    "openai": "^5.20.0",
+    "pdf-parse": "1.1.1"
+  }
+}

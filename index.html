@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <title>TAgpt – Deine KI</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">TA</div><div><strong>TAgpt</strong><small>Dein persönlicher KI-Assistent</small></div></div>
+      <button id="newChat" class="new-chat">＋ Neuer Chat</button>
+      <div class="side-label">WERKZEUGE</div>
+      <button class="side-link" id="memoryToggle">◈ Gedächtnis <span id="memoryCount" class="count">0</span></button>
+      <div class="sidebar-note">Deine Chats werden in diesem Starter lokal im Browser gehalten. Gedächtniseinträge liegen auf dem Server.</div>
+      <div class="sidebar-bottom"><span class="status-dot"></span><span id="statusText">Verbinde mit TAgpt…</span></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><button id="mobileMenu" class="icon-btn" aria-label="Menü">☰</button><div><strong>TAgpt</strong><span class="model-label" id="modelLabel">KI-Assistent</span></div><button id="clearChat" class="text-btn">Chat leeren</button></header>
+      <section id="memoryPanel" class="memory-panel hidden">
+        <div class="panel-heading"><div><h2>Gedächtnis</h2><p>Informationen, die TAgpt bei künftigen Antworten berücksichtigen kann.</p></div><button id="closeMemory" class="icon-btn" aria-label="Schließen">×</button></div>
+        <form id="memoryForm" class="memory-form"><input id="memoryInput" maxlength="1000" placeholder="Zum Beispiel: Ich bevorzuge kurze Erklärungen"><button class="primary-btn">Speichern</button></form>
+        <div id="memoryList" class="memory-list"></div>
+      </section>
+      <section id="chat" class="chat">
+        <div class="welcome" id="welcome">
+          <div class="welcome-logo">TA</div><h1>Was möchtest du wissen?</h1><p>Deine Ideen, Fragen und Projekte starten hier.</p>
+          <div class="suggestions">
+            <button data-prompt="Erkläre mir, wie eine eigene KI-Webanwendung funktioniert.">✦ <span><b>KI verstehen</b><small>Erkläre mir, wie das funktioniert</small></span></button>
+            <button data-prompt="Schreibe ein kleines JavaScript-Programm und erkläre jeden Schritt.">⌘ <span><b>Code schreiben</b><small>Programmieren lernen</small></span></button>
+            <button data-prompt="Hilf mir, einen Plan aus einer längeren Aufgabe zu machen.">☷ <span><b>Plan erstellen</b><small>Eine Aufgabe in Schritte teilen</small></span></button>
+            <button data-prompt="Welche Informationen fehlen dir, um mir bei einer Recherche zu helfen?">⌕ <span><b>Recherchieren</b><small>Eine Frage untersuchen</small></span></button>
+          </div>
+        </div>
+        <div id="messages" class="messages"></div>
+      </section>
+      <footer class="composer-wrap">
+        <div id="fileChips" class="file-chips"></div>
+        <form id="chatForm" class="composer">
+          <textarea id="prompt" rows="1" placeholder="Nachricht an TAgpt…" autocomplete="off"></textarea>
+          <div class="composer-tools">
+            <div class="tool-group">
+              <label class="tool-btn" for="fileInput" title="Datei anhängen">＋ <span>Datei</span></label>
+              <input id="fileInput" type="file" multiple accept=".pdf,.txt,.md,.csv,.json,.js,.ts,.py,.html,.css,.xml,.sql,.log">
+              <label class="web-toggle"><input id="webToggle" type="checkbox"><span>⌕ Websuche</span></label>
+              <button id="voiceBtn" type="button" class="tool-btn" title="Spracheingabe">🎙 <span>Sprache</span></button>
+            </div>
+            <button id="sendBtn" class="send-btn" type="submit" aria-label="Senden">↑</button>
+          </div>
+        </form>
+        <div class="disclaimer">TAgpt kann Fehler machen. Prüfe wichtige Informationen. API-Nutzung kann Kosten verursachen.</div>
+      </footer>
+    </main>
+  </div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
